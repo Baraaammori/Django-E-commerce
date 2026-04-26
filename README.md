@@ -34,15 +34,28 @@ MegaMart is a sophisticated, full-featured e-commerce platform built with a high
 
 ```text
 MegaMart/
-├── frontend/             # React.js application
-│   ├── src/              # Source code
-│   └── public/           # Static assets
-├── backend/              # Django REST Framework application
-│   ├── apps/             # Modular Django apps (users, products, cart, etc.)
-│   ├── config/           # Project configuration
-│   └── media/            # Uploaded product images
-└── venv/                 # Python virtual environment
+├── frontend/             # React.js application (Vite, Axios, Framer Motion)
+└── backend/              # Django REST Framework application
+    ├── config/           # Root configuration (Settings, URLs, WSGI/ASGI)
+    ├── apps/             # Modular business logic
+    │   ├── users/        # Custom User model & JWT Authentication
+    │   ├── products/     # Catalog, Categories, Reviews, and Wishlist
+    │   ├── cart/         # Shopping cart & persistence logic
+    │   ├── orders/       # Checkout flow and order management
+    │   └── contact/      # Customer inquiry storage
+    ├── media/            # Uploaded images (Products/Categories)
+    ├── manage.py         # Project management CLI
+    └── requirements.txt  # Python dependencies
 ```
+
+### Backend Folder Deep Dive
+
+- **`config/`**: Contains `settings.py` for global configuration and `urls.py` which acts as the entry point for all API routes.
+- **`apps/users/`**: Handles the custom authentication system. It replaces the default username login with email-based login and manages JWT token generation.
+- **`apps/products/`**: The core catalog logic. It handles the database models for products, their categories, and the user review system.
+- **`apps/cart/` & `apps/orders/`**: These apps manage the transition from browsing to buying. The cart handles item persistence, while the orders app handles the final checkout transaction.
+- **`media/`**: A dynamically populated folder where Django stores the actual image files uploaded through the Admin Dashboard.
+
 
 ## ⚙️ Getting Started
 
