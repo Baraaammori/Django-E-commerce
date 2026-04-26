@@ -1,0 +1,473 @@
+.home-page {
+  width: 100%;
+}
+
+/* Typography & General */
+.section {
+  padding: 60px 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.section-header h2 span {
+  color: var(--color-brand);
+}
+
+.header-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 16px;
+  gap: 4px;
+}
+
+.view-all:hover {
+  color: var(--color-brand);
+}
+
+/* Hero Section */
+.megamart-hero {
+  background-color: #202844;
+  padding: 80px 0;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: calc(100% - 40px);
+}
+
+@media (min-width: 1024px) {
+  .megamart-hero {
+    margin: 40px auto;
+    max-width: 1200px;
+  }
+}
+
+.megamart-hero-content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .megamart-hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.hero-text {
+  color: white;
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero-text h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.hero-watch-placeholder {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  position: relative;
+}
+
+.hero-img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+}
+
+/* Smartphone Deals */
+.deals-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.deal-card {
+  min-width: 280px;
+  background-color: var(--color-bg-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.deal-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-brand);
+  color: white;
+  padding: 8px 16px;
+  border-bottom-left-radius: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 2;
+}
+
+.deal-image-wrapper {
+  background-color: var(--color-bg-tertiary);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.deal-image-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+}
+
+.deal-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.deal-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-text-primary);
+}
+
+.deal-prices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.deal-prices .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.deal-prices .old-price {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+}
+
+.deal-save {
+  color: var(--color-success);
+  font-weight: 600;
+  font-size: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* Top Categories */
+.categories-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.category-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--color-bg-tertiary);
+  transition: background-color 0.2s;
+}
+
+.category-card:hover .category-image {
+  background-color: var(--color-brand-light);
+}
+
+.category-card p {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* Electronics Brands */
+.brands-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.brand-banner {
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.brand-banner.bg-dark { background-color: #303030; color: white; }
+.brand-banner.bg-yellow { background-color: #fff3cc; }
+.brand-banner.bg-peach { background-color: #ffecdf; }
+
+.text-dark { color: #222222 !important; }
+
+.brand-tag {
+  background-color: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 8px;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.brand-banner.bg-yellow .brand-tag { background-color: #f6de8c; }
+.brand-banner.bg-peach .brand-tag { background-color: #ffd0b0; }
+
+.brand-banner h3 {
+  font-size: 28px;
+  font-weight: 800;
+  max-width: 150px;
+}
+
+.brand-image-placeholder {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.brand-img {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.brand-banner:hover .brand-img {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Daily Essentials */
+.essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .essentials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .essentials-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.essential-card {
+  background-color: var(--color-bg-tertiary);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.essential-image {
+  width: 80px;
+  height: 80px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  margin: 0 auto 16px;
+}
+
+.essential-card p {
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.essential-card h4 {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: 18px;
+}
+
+/* Footer */
+.megamart-footer {
+  background-color: var(--color-brand);
+  color: white;
+  padding-top: 60px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.logo-icon-white {
+  background-color: white;
+  color: var(--color-brand);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info, .download-app {
+  margin-bottom: 30px;
+}
+
+.contact-info h4, .download-app h4 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.app-stores {
+  display: flex;
+  gap: 16px;
+}
+
+.store-btn {
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.store-btn:hover {
+  background-color: white;
+  color: var(--color-brand);
+}
+
+.links-col h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.links-col ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.links-col li {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.links-col li:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}

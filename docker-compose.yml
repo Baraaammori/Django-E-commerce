@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: megamart_db
+      POSTGRES_USER: megamart_user
+      POSTGRES_PASSWORD: megamart_pass
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py seed_data &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://megamart_user:megamart_pass@db:5432/megamart_db
+      - DEBUG=True
+      - SECRET_KEY=docker-dev-secret-key-change-in-production
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      - CORS_ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+
+volumes:
+  postgres_data:
